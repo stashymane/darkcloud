@@ -1,0 +1,70 @@
+@mixin text-color($base) {
+	--text: #{change-color($base, $alpha: 0.9, $lightness: 95%)};
+	--text-hover: #{change-color($base, $alpha: 1, $lightness: 95%)};
+}
+
+@mixin container($base) {
+    $bgTransparent: adjust-color($base, $alpha: -0.2);
+    $containerColor: scale-color($base, $lightness: 10%);
+    $containerSecondary: scale-color($base, $lightness: 20%);
+    $containerTransparent: adjust-color($containerColor, $alpha: -0.2);
+    $containerSecondaryTransparent: adjust-color($containerSecondary, $alpha: -0.2);
+
+	--bg: #{$base};
+	--bg-transparent: #{$bgTransparent};
+	--container: #{$containerColor};
+    --container-secondary: #{$containerSecondary};
+    --container-transparent: #{$containerTransparent};
+    --container-secondary-transparent: #{$containerSecondaryTransparent};
+
+    --on-bg: #{scale-color($base, $lightness: 90%)};
+    --on-container: #{scale-color($containerColor, $lightness: 90%)};
+    --on-container-secondary: #{scale-color($containerSecondary, $lightness: 90%)};
+	@include text-color(change-color($base, $lightness: 90%, $alpha: 1));
+}
+
+@mixin icon($icon, $size) {
+    &::before {
+        content: "";
+        display: inline-block;
+        background-color: currentColor;
+        -webkit-mask-image: $icon;
+        mask-image: $icon;
+        width: $size;
+        height: $size;
+    }
+}
+
+@function icon-url($icon) {
+    @return url(#{"data:image/svg+xml;base64," + $icon});
+}
+
+@mixin materialize($location: 'before') {
+    position: relative;
+
+    &::#{$location} {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        --mat-color: rgba(255,255,255,0.1);
+        opacity: 0;
+        background-size: 0 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: background-size .4s var(--anim), opacity .1s linear;
+        background-image: radial-gradient(circle at center, var(--mat-color) 7.5%, transparent 10%);
+    }
+
+    &:focus, &:hover {
+        opacity: 1;
+    }
+
+    &:active::#{$location}, &:focus::#{$location} {
+        background-size: 1500% 1500%;
+        opacity: 1;
+    }
+}

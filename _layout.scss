@@ -1,0 +1,14 @@
+/* main layout */
+* {
+    box-sizing: border-box;
+}
+
+.sc-classic .l-container.l-content { /* content container */
+    margin: 0;
+    padding-top: 0;
+    width: 100%;
+}
+
+body.sc-classic {
+    background: var(--bg);
+}

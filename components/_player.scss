@@ -1,0 +1,226 @@
+.sc-classic .playControls {
+    @include container(#000);
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: var(--player-height);
+
+    .playControls__bg {
+        display: none;
+    }
+
+    .playControls__inner {
+        background-color: var(--container);
+        box-shadow: 0 0 2rem var(--container);
+        border-top: none;
+        padding-left: var(--sidebar-width);
+        height: 100%;
+    }
+
+    .playControls__wrapper {
+        display: flex;
+        margin: 0;
+        width: auto;
+    }
+
+    .playControls__elements {
+        display: flex;
+        width: 100%;
+    }
+
+    .playControls__timeline {
+        flex-grow: 1;
+    }
+
+    .playControls__soundBadge {
+        position: absolute;
+        left: calc(-1 * var(--sidebar-width));
+        width: var(--sidebar-width);
+        height: 100%;
+        padding: 0;
+
+        .playbackSoundBadge__avatar {
+            position: absolute;
+            z-index: -1;
+            margin: 0;
+            overflow: hidden;
+
+            &, .image, span {
+                height: 100% !important;
+                width: 100% !important;
+            }
+
+            .image {
+                filter: blur(12px) brightness(0.6) saturate(2);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-image: linear-gradient(90deg, transparent, var(--container));
+            }
+        }
+
+        .playbackSoundBadge__titleContextContainer {
+            padding: 0 1rem;
+
+            .playbackSoundBadge__lightLink,
+            .playbackSoundBadge__titleLink {
+                color: var(--text);
+                height: auto;
+                
+                &:hover {
+                    color: var(--text-hover);
+                }
+            }
+
+            .playbackSoundBadge__lightLink  {
+                font-size: 0.6rem;
+            }
+
+            .playbackSoundBadge__titleLink {
+                font-weight: bold;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+/* --- controls --- */
+.sc-classic .playControls {
+    --icon-size: 1.25rem;
+
+    .playControls__control {
+        background-image: none !important;
+        color: var(--text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: auto;
+
+        &:hover {
+            color: var(--text-hover);
+        }
+    }
+
+    button.playControls__control, .playControls__control button {
+        padding: 0.5rem;
+        height: 100%;
+    }
+
+    .playControls__prev {
+        @include icon(var(--skip-backward-icon), var(--icon-size));
+        margin-left: 1rem;
+    }
+
+    .playControl {
+        @include icon(var(--play-icon), var(--icon-size));
+        &.playing {
+            @include icon(var(--pause-icon), var(--icon-size));
+        }
+    }
+
+    .playControls__next {
+        @include icon(var(--skip-forward-icon), var(--icon-size));
+    }
+
+    .shuffleControl, .repeatControl {
+        width: auto;
+        height: auto;
+
+        &::before {
+            position: static;
+        }
+    }
+
+    .shuffleControl {
+        &::before {
+            color: var(--text);
+            background: currentColor;
+        }
+
+        @include icon(var(--shuffle-icon), var(--icon-size));
+
+        &.m-shuffling::before {
+            color: var(--accent);
+            opacity: 1;
+        }
+
+        &::after {
+            content: none;
+        }
+    }
+
+    .repeatControl {
+        background: none;
+        position: relative;
+        color: var(--text);
+
+        @include icon(var(--repeat-icon), var(--icon-size));
+
+        &::before {
+            background: currentColor;
+            opacity: 1;
+        }
+
+        &::after {
+            content: none;
+        }
+
+        &.m-one, &.m-all {
+            color: var(--accent);
+        }
+
+        &.m-one::after {
+            content: "1";
+            @include container($accent);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: none;
+            border-radius: 100%;
+            position: absolute;
+            top: 1rem;
+            right: 0;
+            left: unset;
+            font-family: sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: #000;
+            background-color: var(--container);
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+    }
+
+    .playControls__queue {
+        left: 0;
+        right: unset;
+        bottom: 100%;
+        transition-timing-function: var(--anim) !important;
+        transition-duration: .2s !important;
+        transform: translateY(2rem);
+
+        .queue {
+            background-color: var(--container);
+
+            .queue__panel {
+                border: none;
+            }
+
+            .queue__itemsHeight {
+                background-image: none;
+            }
+
+            .queue__itemWrapper, .queueItemView {
+                background-color: transparent;
+            }
+        }
+    }
+}
+

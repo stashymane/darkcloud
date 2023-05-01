@@ -1,0 +1,39 @@
+.sc-classic {
+    .profileHeader {
+        .profileHeaderBackground__visual {
+            background-size: cover;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(transparent 50%, var(--bg) 100%);
+            }
+        }
+    }
+
+    .userInfoBar {
+        padding: 0;
+
+        .profileTabs {
+            border: none;
+        }
+
+        .userInfoBar__buttons {
+            z-index: 11;
+        }
+    }
+
+    .l-vertical-bar:has(.userInfoBar) {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .dropbar.m-insideContent {
+        display: none;
+    }
+}

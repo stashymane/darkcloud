@@ -1,0 +1,7 @@
+.sc-classic .modular-home-mixed-selection {
+    .tileGallery__sliderPanelSlide {
+        --width: 12rem;
+        width: var(--width);
+        flex: 0 0 var(--width);
+    }
+}

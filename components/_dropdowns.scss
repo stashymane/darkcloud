@@ -1,0 +1,66 @@
+.sc-classic .dropdownMenu {
+    animation: slide-down .1s var(--anim);
+
+    .headerMenu {
+        background-color: var(--container);
+        border: none;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        box-shadow: 0 0 2rem var(--bg);
+
+        .headerMenu__link {
+            color: var(--on-container);
+            font-weight: normal;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.25rem;
+
+            &:hover {
+                background-color: var(--container-secondary);
+            }
+
+            &::after {
+                filter: invert(1);
+                position: static;
+                order: -1;
+            }
+        }
+    }
+
+    .dropdownContent__container {
+        @include container(#111);
+        background-color: var(--container);
+        border: none;
+        box-shadow: 0 0 1rem var(--bg);
+        border-radius: 1rem;
+
+        .dropdownContent__header {
+            border: none;
+            color: var(--on-container);
+
+            h2 {
+                font-weight: bold;
+                font-size: 1rem;
+            }
+        }
+
+        .dropdownContent__listItem {
+            border-bottom: none;
+
+            &:hover {
+                background-color: var(--container-secondary);
+            }
+
+            .notificationBadge__main,
+            .notificationBadge__username {
+                color: var(--on-container);
+            }
+
+            .notificationBadge__username {
+                font-weight: bold;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

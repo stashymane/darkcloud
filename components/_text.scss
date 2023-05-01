@@ -1,0 +1,7 @@
+a[href] {
+    color: var(--text);
+
+    :hover, &.sc-link-dark:hover {
+        color: var(--text-hover);
+    }
+}

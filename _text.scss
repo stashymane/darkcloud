@@ -1,0 +1,12 @@
+.sc-classic {
+    color: var(--text);
+
+    .g-tabs-link, .sc-link-light, a.sc-ministats {
+        &, &:visited {
+            color: var(--text);
+        }
+        &:hover {
+            color: var(--text-hover);
+        }
+    }
+}

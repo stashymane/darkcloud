@@ -1,0 +1,78 @@
+.sc-classic .dialog {
+    @include container(#000000dd);
+    background: var(--container);
+    border: none;
+    width: auto !important;
+    min-height: unset !important;
+    border-radius: 1rem;
+    padding: 0.75rem;
+    backdrop-filter: blur(16px);
+    z-index: 1001;
+
+    .userDialogBadge {
+        display: grid;
+        grid-template: 'avatar name followers'
+                        'avatar follow follow';
+        &:has(.userDialogBadge__address) {
+            grid-template: 'avatar name followers'
+            'avatar location location'
+            'avatar follow follow';
+        }
+        
+        column-gap: 1rem;
+        row-gap: 0.2em;
+        margin: 0;
+        text-align: left;
+
+        .userDialogBadge__avatar {
+            grid-area: avatar;
+            margin: 0;
+            width: auto;
+            height: auto;
+
+            .image__rounded {
+                border-radius: 0.75rem;
+            }
+        }
+
+        .userDialogBadge__description,
+        .userDialogBadge__stats,
+        .userDialogBadge__address {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .userDialogBadge__address {
+            grid-area: location;
+        }
+
+        .userDialogBadge__description {
+            grid-area: name;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .sc-ministats-group .sc-ministats,
+        p {
+            margin: 0;
+        }
+
+        .userDialogBadge__stats {
+            grid-area: followers;
+            margin: 0;
+        }
+
+        .userDialogBadge__action {
+            grid-area: follow;
+            order: 2;
+        }
+    }
+
+    .dialog__arrow {
+        background: var(--container);
+        border: none;
+    }
+}

@@ -1,0 +1,5 @@
+$accent: #f50;
+:root {
+	@include container(#111);
+	--accent: #{$accent};
+}

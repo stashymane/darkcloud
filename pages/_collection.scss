@@ -1,0 +1,44 @@
+:root {
+    --filter-width: 26rem;
+}
+
+@media screen and (max-width: 1500px) {
+    :root {
+        --filter-width: 18rem;
+    }
+}
+
+.sc-classic .g-tabs {
+    padding-right: calc(var(--filter-width) + var(--tab-padding) * 2);
+}
+
+.sc-classic .l-collection > .l-nav {
+    display: contents;
+}
+
+.collectionSection__subHeading {
+    display: none;
+}
+
+.sc-classic .collection:not(.m-overview) .collectionSection__top {
+    position: fixed;
+    top: 0;
+    right: 2rem;
+    z-index: 11;
+    width: var(--filter-width);
+    height: var(--tab-height);
+    margin-bottom: 0;
+
+    .collectionSection__flexFill {
+        display: none;
+    }
+
+    .collectionSection__filters {
+        width: unset;
+        flex-grow: 1;
+    }
+}
+
+.sc-classic .collectionSection {
+    padding-top: 1rem;
+}

@@ -1,0 +1,51 @@
+
+:root {
+    --tab-padding: 2rem;
+    --tab-height: 46px;
+}
+
+.sc-classic .g-tabs {
+    margin: 0;
+    padding: 0 var(--tab-padding);
+    margin: 0 -30px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--bg-transparent);
+    backdrop-filter: blur(16px);
+    min-height: var(--tab-height);
+    border-bottom: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-shadow: 0 0 20px var(--bg-transparent);
+
+    .g-tabs-item {
+        margin: 0;
+        float: none;
+        height: 100%;
+    }
+ 
+    .g-tabs-link {
+        color: var(--text);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        border-bottom: none;
+        padding: 0 1rem;
+
+        &:hover {
+            color: var(--text-hover);
+        }
+
+        &.active {
+            color: var(--accent);
+        }
+    }
+
+    .g-tabs {
+        display: contents;
+    }
+}

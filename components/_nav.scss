@@ -1,0 +1,226 @@
+#app {
+    padding-left: var(--sidebar-width);
+}
+
+.sc-classic .header {
+    width: var(--sidebar-width);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    width: var(--sidebar-width);
+    background: var(--bg);
+
+    .left {
+        float: none;
+    }
+
+    .header__inner {
+        width: auto;
+        height: 100%;
+        padding-bottom: var(--player-height);
+        position: sticky;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+
+        .header__userNavButton,
+        .header__moreButton,
+        .uploadButton,
+        .header__navMenuItem {
+            transition: background-color .2s var(--anim), color .2s var(--anim);
+
+            &:hover {
+                background-color: var(--container-secondary);
+                transition: none;
+            }
+
+            &.selected {
+                background-color: var(--bg);
+            }
+        }
+
+        .header__moreButton,
+        .uploadButton,
+        .header__navMenuItem {
+            @include materialize('after');
+        }
+
+        .header__userNavButton {
+            @include materialize('before');
+        }
+
+        .sc-clearfix:after,
+        .sc-clearfix:before {
+            display: none;
+            content: none;
+        }
+
+        .header__left,
+        .header__middle,
+        .header__navMenu.left {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 0;
+        }
+
+        .header__left {
+            .header__logo {
+                display: flex;
+                justify-content: center;
+                background-color: transparent;
+            }
+
+            .header__navMenu li a {
+                width: 100%;
+                text-align: left;
+                padding: 0.8rem 2rem;
+                height: auto;
+                display: flex;
+                gap: 1em;
+                align-items: center;
+            }
+        }
+
+        .header__userNav {
+            display: contents;
+        }
+
+        .header__right {
+            display: grid;
+            grid-template: 'user user user user'
+                'notifications messages more upload';
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            justify-content: center;
+            margin: 0.5rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            @include container(#000);
+            background-color: var(--container);
+
+            .creatorSubscriptionsButton {
+                display: none;
+            }
+
+            .header__userNavUsernameButton {
+                grid-area: user;
+                width: 100%;
+                padding: 0 1rem;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+
+                .header__userNavUsername {
+                    display: inherit;
+                }
+            }
+
+            .header__soundInput {
+                grid-area: upload;
+                display: flex;
+            }
+
+            .header__uiEvolutionButton,
+            .header__userNavActivitiesButton,
+            .header__userNavMessagesButton,
+            .header__userNavTipsButton,
+            .header__moreButton {
+                width: auto;
+            }
+
+            .notificationIcon,
+            .header__moreButton {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &::before {
+                    background-image: none;
+                    opacity: 1;
+                    position: static;
+                }
+            }
+
+            .header__userNavActivitiesButton {
+                grid-area: notifications;
+                .notificationIcon {
+                    @include icon(var(--bell-icon), 1.25rem);
+                }
+
+                &.selected .notificationIcon {
+                    @include icon(var(--bell-filled-icon), 1.25rem);
+                }
+            }
+
+            .header__userNavMessagesButton {
+                grid-area: messages;
+                .notificationIcon {
+                    @include icon(var(--message-icon), 1.25rem);
+                }
+
+                &.selected .notificationIcon {
+                    @include icon(var(--message-filled-icon), 1.25rem);
+                }
+            }
+
+            .header__moreButton {
+                grid-area: more;
+                background-image: none;
+                @include icon(var(--more-icon), 1.25rem);
+            }
+
+            .uploadButton {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+
+                @include icon(var(--upload-icon), 1.25rem);
+
+                &.selected {
+                    @include icon(var(--upload-filled-icon), 1.25rem);
+                }
+
+                .uploadButton__title {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #app {
+        padding-left: var(--sidebar-collapsed-width);
+    }
+
+    .sc-classic .header {
+        width: var(--sidebar-collapsed-width);
+
+        .header__inner {
+            .header__left .header__navMenu li a {
+                font-size: 0;
+                padding: 1rem;
+                justify-content: center;
+            }
+
+            .header__middle {
+                flex-grow: 1;
+            }
+
+            .header__right {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                border-radius: 0;
+                background-color: transparent;
+
+                .header__userNavUsernameButton .header__userNavUsername {
+                    display: none;
+                }
+            }
+        }
+    }
+}
