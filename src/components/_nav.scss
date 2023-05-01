@@ -107,13 +107,23 @@
             .header__userNavUsernameButton {
                 grid-area: user;
                 width: 100%;
-                padding: 0 1rem;
+                padding: 0 0.6rem;
                 display: flex;
+                gap: 0.75rem;
                 align-items: center;
                 border-bottom: 1px solid rgba(255,255,255,0.05);
 
                 .header__userNavUsername {
-                    display: inherit;
+                    display: contents;
+                }
+
+                .header__userNavAvatar {
+                    margin-top: 1px;
+
+                    &, .sc-artwork {
+                        height: 2em !important;
+                        width: 2em !important;
+                    }
                 }
             }
 
