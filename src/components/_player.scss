@@ -1,4 +1,6 @@
 .sc-classic .playControls {
+    --icon-size: 1.25rem;
+
     @include container(#000);
     position: fixed;
     left: 0;
@@ -105,11 +107,6 @@
             }
         }
     }
-}
-
-/* --- controls --- */
-.sc-classic .playControls {
-    --icon-size: 1.25rem;
 
     .playControls__control {
         background-image: none !important;
@@ -245,6 +242,40 @@
                 filter: invert(1);
                 background-color: transparent;
             }
+        }
+    }
+
+    .volume {
+        .volume__sliderWrapper {
+            background-color: var(--container-transparent);
+            border: none;
+            box-shadow: 0 0 5px #000;
+            border-radius: 1rem;
+            border: 1px solid var(--container-secondary-transparent) !important;
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity .1s var(--anim), height .1s var(--anim);
+
+            .volume__sliderBackground {
+                background-color: var(--container-secondary);
+            }
+
+            &::after, &::before {
+                border-color: transparent transparent var(--container) var(--container);
+            }
+
+            &::before {
+                border-color: transparent  transparent var(--container-secondary) var(--container-secondary);
+                bottom: -9px;
+            }
+
+            &::after {
+                bottom: -7px;
+            }
+        }
+
+        &.expanded .volume__sliderWrapper {
+            opacity: 1;
         }
     }
 }
