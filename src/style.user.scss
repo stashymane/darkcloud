@@ -1,6 +1,7 @@
 @import "head";
 @import "functions";
 @-moz-document domain("soundcloud.com") {
+    @import "fonts";
     @import "variables";
     @import "animations";
     @import "colors";
@@ -18,3 +19,4 @@
     @import "pages/artist";
     @import "pages/collection";
 }
+
