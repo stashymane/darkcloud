@@ -237,6 +237,14 @@
             .queue__itemWrapper, .queueItemView {
                 background-color: transparent;
             }
+
+            .queue__hide {
+                font-size: 0;
+                padding: 1rem;
+                height: auto;
+                filter: invert(1);
+                background-color: transparent;
+            }
         }
     }
 }

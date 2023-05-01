@@ -15,3 +15,13 @@
 .sc-classic .lazyLoadingList .loading {
     filter: invert(1);
 }
+
+.sc-classic .sc-border-light-right {
+    border: none;
+}
+
+.sc-classic .l-sidebar-right {
+    .sidebarHeader {
+        border-bottom: none;
+    }
+}
