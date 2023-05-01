@@ -4,8 +4,9 @@
   "description": "A dark SoundCloud user style.",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch src:dist --style compressed",
-    "build": "sass src:dist --style compressed",
+    "dev": "start firefox %cd%\\dist\\style.user.css && npm run watch",
+    "watch": "sass --watch src:dist",
+    "build": "sass src:dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "stashymane",
