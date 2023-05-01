@@ -2,4 +2,31 @@
     .sound__content {
         overflow: visible;
     }
+
+    .commentForm {
+        margin-top: 0 !important;
+
+        .commentForm__wrapper {
+            background: transparent;
+            border: none;
+            height: 0;
+
+            &.visible {
+                height: auto !important;
+                padding: 0 1rem;
+            }
+
+            .commentForm__avatar .sc-artwork {
+                border-radius: 100%;
+            }
+
+            .commentForm__inputWrapper {
+                .commentForm__input {
+                    background-color: transparent;
+                    border: none;
+                    color: var(--text);
+                }
+            }
+        }
+    }
 }
