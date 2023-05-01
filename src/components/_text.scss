@@ -5,3 +5,14 @@ a[href] {
         color: var(--text-hover);
     }
 }
+
+.sc-classic {
+    .sc-link-dark {
+        --text: rgba(255,255,255, 0.85);
+        --text-hover: #fff;
+    }
+    .sc-link-light {
+        --text: rgba(255,255,255,0.7);
+        --text-hover: rgba(255,255,255,0.85);
+    }
+}

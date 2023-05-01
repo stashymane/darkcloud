@@ -1,20 +1,25 @@
-.sc-classic .stream {
+.sc-classic .stream, .sc-classic .sound {
     .sound__content {
         overflow: visible;
+
+        .soundTitle__title {
+            font-weight: bold;
+        }
     }
 
     .commentForm {
         margin-top: 0 !important;
 
+        &.visible .commentForm__wrapper {
+            height: auto !important;
+            padding: 0.5rem 1rem;
+        }
+
         .commentForm__wrapper {
             background: transparent;
             border: none;
             height: 0;
-
-            &.visible {
-                height: auto !important;
-                padding: 0 1rem;
-            }
+            padding: 0;
 
             .commentForm__avatar .sc-artwork {
                 border-radius: 100%;
