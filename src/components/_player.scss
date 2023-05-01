@@ -16,6 +16,7 @@
         box-shadow: 0 0 2rem var(--container);
         border-top: none;
         padding-left: var(--sidebar-width);
+        padding-right: 2rem;
         height: 100%;
     }
 
@@ -246,6 +247,10 @@
     }
 
     .volume {
+        .volume__button {
+            filter: invert(1);
+        }
+
         .volume__sliderWrapper {
             background-color: var(--container-transparent);
             border: none;
