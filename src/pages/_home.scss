@@ -1,7 +1,17 @@
 .sc-classic .modular-home-mixed-selection {
-    .tileGallery__sliderPanelSlide {
-        --width: 12rem;
-        width: var(--width);
-        flex: 0 0 var(--width);
+    .playableTile__image {
+        border-radius: 1rem;
+        overflow: hidden;
     }
+    .lazyLoadingList__list {
+        .mixedModularHome__item {
+            .mixedSelectionModule {
+                border: none;
+            }
+        }
+    }
+}
+
+.sc-classic .lazyLoadingList .loading {
+    filter: invert(1);
 }

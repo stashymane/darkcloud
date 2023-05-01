@@ -13,6 +13,19 @@
                 background: linear-gradient(transparent 50%, var(--bg) 100%);
             }
         }
+
+        .editImage__select, .profileHeader__chooserWrapper {
+            position: relative;
+
+            .imageEditDropdownButton {
+                position: absolute;
+                background-color: inherit;
+            }
+        }
+        
+        .profileHeader__chooserWrapper .imageEditDropdownButton {
+            right: 0;
+        }
     }
 
     .userInfoBar {
@@ -35,5 +48,18 @@
 
     .dropbar.m-insideContent {
         display: none;
+    }
+
+    .userInfoBar__buttons .sc-button-group {
+        .sc-button-insights {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    .owned .soundActions .sc-button-like {
+        border-top-right-radius: var(--btn-radius);
+        border-bottom-right-radius: var(--btn-radius);
+        margin-right: var(--btn-outline-width);
     }
 }

@@ -39,6 +39,16 @@
     }
 }
 
-.sc-classic .collectionSection {
+.sc-classic .collection {
     padding-top: 1rem;
+
+    .playableTile__actionWrapper {
+        gap: 0.2rem;
+
+        .sc-button {
+            font-size: 0;
+            gap: 0;
+            padding: 0.4rem;
+        }
+    }
 }

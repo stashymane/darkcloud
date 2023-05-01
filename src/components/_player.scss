@@ -65,6 +65,23 @@
             }
         }
 
+        .playbackSoundBadge__actions {
+            display: flex;
+            align-items: center;
+
+            .playbackSoundBadge__showQueue {
+                font-size: 0;
+                gap: 0;
+                padding: 0.4rem;
+                width: auto;
+                height: auto;
+                
+                svg {
+                    filter: invert(1);
+                }
+            }
+        }
+
         .playbackSoundBadge__titleContextContainer {
             padding: 0 1rem;
 

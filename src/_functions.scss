@@ -9,6 +9,8 @@
     $containerSecondary: scale-color($base, $lightness: 20%);
     $containerTransparent: adjust-color($containerColor, $alpha: -0.2);
     $containerSecondaryTransparent: adjust-color($containerSecondary, $alpha: -0.2);
+    $overlayColor: scale-color($base, $lightness: 50%, $alpha: -80%);
+    $overlaySecondary: scale-color($base, $lightness: 50%, $alpha: -70%);
 
 	--bg: #{$base};
 	--bg-transparent: #{$bgTransparent};
@@ -20,6 +22,8 @@
     --on-bg: #{scale-color($base, $lightness: 90%)};
     --on-container: #{scale-color($containerColor, $lightness: 90%)};
     --on-container-secondary: #{scale-color($containerSecondary, $lightness: 90%)};
+    --overlay: #{$overlayColor};
+    --overlay-secondary: #{$overlaySecondary};
 	@include text-color(change-color($base, $lightness: 90%, $alpha: 1));
 }
 
@@ -50,13 +54,12 @@
         right: 0;
         bottom: 0;
         left: 0;
-        --mat-color: rgba(255,255,255,0.1);
         opacity: 0;
         background-size: 0 0;
         background-position: center center;
         background-repeat: no-repeat;
         transition: background-size .4s var(--anim), opacity .1s linear;
-        background-image: radial-gradient(circle at center, var(--mat-color) 7.5%, transparent 10%);
+        background-image: radial-gradient(circle at center, var(--overlay) 7.5%, transparent 10%);
     }
 
     &:focus, &:hover {

@@ -63,4 +63,18 @@
             }
         }
     }
+
+    .moreActions {
+        background: var(--container);
+        border: none;
+        border-radius: 0.2rem;
+
+        .moreActions__button {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            justify-content: flex-start;
+            text-indent: 0;
+        }
+    }
 }

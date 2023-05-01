@@ -1,4 +1,102 @@
+:root {
+    --btn-outline-width: 0.125rem;
+    --btn-radius: 1rem;
+}
+
+.sc-classic .sc-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: var(--overlay);
+    color: var(--on-container);
+    border: none;
+    border-radius: var(--btn-radius);
+    overflow: hidden;
+    padding: 0.25rem 0.8rem;
+    height: auto;
+    width: auto;
+    min-width: 0;
+    font-size: 0.75rem;
+    text-indent: 0;
+    transition-property: background-color, color, outline;
+    transition-duration: .05s;
+    transition-timing-function: var(--anim);
+    outline: 0 solid var(--overlay-secondary);
+
+    @include materialize('after');
+
+    &:hover {
+        background-color: var(--overlay-secondary);
+    }
+
+    &:focus, &.sc-button-active {
+        outline-width: var(--btn-outline-width);
+    }
+
+    &.sc-button-icon {
+        font-size: 0;
+        gap: 0;
+        padding: 0.4rem;
+    }
+
+    &.sc-button-medium {
+        font-size: 1.2em;
+        padding: 0.5rem 1rem;
+    }
+
+    &.sc-button-large {
+        font-size: 1.2em;
+        padding: 0.7rem 1.2rem;
+    }
+
+    &::before {
+        filter: invert(1) hue-rotate(180deg);
+        position: static;
+    }
+
+    &.sc-button-play {
+        font-size: 0;
+    }
+}
+
 /* button groups */
 .sc-classic .sound__soundActions {
     background-color: transparent;
+    overflow: visible;
+}
+
+.sc-classic .sc-button-group {
+    display: flex;
+    gap: var(--btn-outline-width);
+
+    .sc-button {
+        margin: 0;
+        border-radius: 0;
+
+        &:first-child {
+            border-top-left-radius: var(--btn-radius);
+            border-bottom-left-radius: var(--btn-radius);
+        }
+
+        &:last-child {
+            border-top-right-radius: var(--btn-radius);
+            border-bottom-right-radius: var(--btn-radius);
+        }
+
+        &.sc-button-repost, &.sc-button-share {
+            border-top-right-radius: var(--btn-radius);
+            border-bottom-right-radius: var(--btn-radius);
+            margin-right: var(--btn-outline-width);
+        }
+
+        &.sc-button-copylink, &.sc-button-share {
+            border-top-left-radius: var(--btn-radius);
+            border-bottom-left-radius: var(--btn-radius);
+        }
+    }
+}
+
+.sc-classic .soundBadge__additional {
+    background: linear-gradient(90deg, transparent, var(--bg) 17px);
 }
