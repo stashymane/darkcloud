@@ -1,0 +1,14 @@
+{
+  "name": "darkcloud",
+  "version": "1.0.0",
+  "description": "A dark SoundCloud user style.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stashymane",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}
