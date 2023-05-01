@@ -3,9 +3,6 @@
 
 name: Release
 
-permissions:
-  contents: write
-
 on:
   push:
     tags:
@@ -15,6 +12,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     strategy:
       matrix:
