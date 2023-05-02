@@ -45,7 +45,7 @@
         .header__moreButton,
         .uploadButton,
         .header__navMenuItem {
-            @include materialize('after');
+            @include materialize('after', ["selected"]);
         }
 
         .header__userNavButton {
@@ -69,18 +69,25 @@
         .header__left {
             .header__logo {
                 display: flex;
-                justify-content: center;
+                justify-content: flex-end;
                 background-color: transparent;
             }
 
-            .header__navMenu li a {
-                width: 100%;
-                text-align: left;
-                padding: 0.8rem 2rem;
-                height: auto;
-                display: flex;
-                gap: 1em;
-                align-items: center;
+            .header__navMenu li {
+                padding: 0.25rem 0.5rem;
+
+                a {
+                    width: 100%;
+                    text-align: left;
+                    padding: 0.8rem 2rem;
+                    height: auto;
+                    display: flex;
+                    gap: 1em;
+                    align-items: center;
+                    flex-direction: row-reverse;
+                    border-radius: 1rem;
+                    overflow: hidden;
+                }
             }
         }
 
