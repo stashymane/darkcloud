@@ -67,7 +67,7 @@
         background-image: radial-gradient(circle at center, var(--overlay) 7.5%, transparent 10%);
     }
 
-    &:focus, &:hover {
+    &:focus::#{$location}, &:hover::#{location} {
         opacity: 1;
     }
 

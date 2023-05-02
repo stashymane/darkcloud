@@ -42,10 +42,14 @@
             }
         }
 
+        .header__navMenuItem {
+            @include materialize('after', ["selected"]);
+        }
+        
         .header__moreButton,
         .uploadButton,
         .header__navMenuItem {
-            @include materialize('after', ["selected"]);
+            @include materialize('after');
         }
 
         .header__userNavButton {
@@ -106,6 +110,7 @@
             overflow: hidden;
             @include container(#000);
             background-color: var(--container);
+            border: 1px solid var(--container-transparent);
 
             .creatorSubscriptionsButton {
                 display: none;

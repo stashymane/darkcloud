@@ -24,7 +24,7 @@
     transition-timing-function: var(--anim);
     outline: 0 solid var(--overlay-secondary);
 
-    @include materialize('after');
+    @include materialize('after', ["sc-button-active"]);
 
     &:hover {
         background-color: var(--overlay-secondary);
