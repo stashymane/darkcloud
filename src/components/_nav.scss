@@ -31,6 +31,9 @@
         .uploadButton,
         .header__navMenuItem {
             transition: background-color .2s var(--anim), color .2s var(--anim);
+            user-select: none;
+            -webkit-user-drag: none;
+            user-drag: none;
 
             &:hover {
                 background-color: var(--container-secondary);
