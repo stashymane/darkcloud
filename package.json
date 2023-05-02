@@ -1,6 +1,6 @@
 {
   "name": "darkcloud",
-  "version": "0.1.0-BETA",
+  "version": "0.0.0-BETA",
   "description": "A dark SoundCloud user style.",
   "main": "index.js",
   "scripts": {
